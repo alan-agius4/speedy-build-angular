@@ -6,7 +6,7 @@
 [![Dependency Status](https://img.shields.io/david/alan-agius4/speedy-build-angular.svg?style=flat-square)](https://david-dm.org/alan-agius4/speedy-build-angular)
 [![devDependency Status](https://img.shields.io/david/dev/alan-agius4/speedy-build-angular.svg?style=flat-square)](https://david-dm.org/alan-agius4/speedy-build-angular?type=dev)
 
-This is third party builder (not officially supported by Angular), for [Styelint](https://github.com/stylelint/stylelint) in Angular CLI.
+Angular CLI third party builder (not officially supported by Angular), for [Styelint](https://github.com/stylelint/stylelint).
 
 ## Get started
 
