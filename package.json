@@ -12,7 +12,8 @@
   "typings": "src/index.d.ts",
   "builders": "builders.json",
   "scripts": {
-    "prebuild": "rimraf dist",
+    "lint": "tslint -c tslint.json --format stylish -p tsconfig.json",
+    "prebuild": "npm run lint && rimraf dist",
     "build": "tsc -p tsconfig.json",
     "postbuild": "cpx package.json dist && cpx builders.json dist && cpx README.md dist && cpx src/schema.json dist/src",
     "pretest": "npm run build",
