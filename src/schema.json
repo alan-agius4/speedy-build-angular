@@ -47,7 +47,7 @@
 		"files": {
 			"type": "array",
 			"description": "Files to include in linting.",
-			"default": ["**/*.@(scss|sass|css|less|stylus)"],
+			"default": ["**/*.@(scss|sass|css|less|styl)"],
 			"items": {
 				"type": "string"
 			}
