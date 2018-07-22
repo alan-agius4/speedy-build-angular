@@ -77,7 +77,6 @@ export default class StylelintBuilder implements Builder<StylelintBuilderOptions
 	}
 
 	getFilesToLint(root: string, options: StylelintBuilderOptions): string[] {
-
 		const { files, exclude: ignore } = options;
 
 		return files
