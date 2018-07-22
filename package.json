@@ -1,6 +1,6 @@
 {
   "name": "@speedy/build-angular",
-  "version": "0.2.0",
+  "version": "0.0.0",
   "description": "This is third party builder for Stylelint in Angular CLI.",
   "keywords": [
     "angular-cli",
@@ -21,7 +21,7 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "preversion": "npm test",
     "version": "npm run build && npm run changelog",
-    "postversion": "git commit --all -m \"chore(all): update for release\" && git push && git push --tags",
+    "postversion": "git commit --all -m \"chore: update for release\" && git push && git push --tags",
     "release": "cd dist && npm publish"
   },
   "repository": {
