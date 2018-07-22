@@ -1,6 +1,6 @@
 {
   "name": "@speedy/build-angular",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "This is third party builder for Stylelint in Angular CLI.",
   "keywords": [
     "angular-cli",
