@@ -1,7 +1,10 @@
 
-[![CircleCI](https://circleci.com/gh/alan-agius4/-speedy-build-angular/tree/master.svg?style=svg)](https://circleci.com/gh/alan-agius4/-speedy-build-angular/tree/master)
-
 # Angular CLI Stylelint builder
+
+[![CircleCI](https://circleci.com/gh/alan-agius4/speedy-build-angular/tree/master.svg?style=svg)](https://circleci.com/gh/alan-agius4/speedy-build-angular/tree/master)
+[![npm version](https://img.shields.io/npm/v/@speedy/build-angular.svg)](https://www.npmjs.com/package/@speedy/build-angular)
+[![Dependency Status](https://img.shields.io/david/alan-agius4/speedy-build-angular.svg?style=flat-square)](https://david-dm.org/alan-agius4/speedy-build-angular)
+[![devDependency Status](https://img.shields.io/david/dev/alan-agius4/speedy-build-angular.svg?style=flat-square)](https://david-dm.org/alan-agius4/speedy-build-angular?type=dev)
 
 This is third party builder (not officially supported by Angular), for [Styelint](https://github.com/stylelint/stylelint) in Angular CLI.
 
