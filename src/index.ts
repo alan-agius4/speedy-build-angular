@@ -58,13 +58,10 @@ export default class StylelintBuilder implements Builder<StylelintBuilderOptions
 							this.context.logger.info("All files pass linting.");
 						}
 
-						const output = result.results
-							.filter(x => x.errored)
-							.map(x => stylelint.formatters.string([x]))
-							.join("\n");
+						const errored = result.results.filter(x => x.errored);
 
-						if (output) {
-							this.context.logger.info(output);
+						if (errored.length) {
+							this.context.logger.info(stylelint.formatters.string(errored));
 						}
 					}
 
