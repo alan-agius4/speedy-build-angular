@@ -1,0 +1,36 @@
+{
+	"compilerOptions": {
+		"target": "es2016",
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"declaration": true,
+		"noImplicitReturns": true,
+		"noImplicitAny": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"outDir": "dist/src",
+		"noFallthroughCasesInSwitch": true,
+		"allowUnreachableCode": false,
+		"skipDefaultLibCheck": true,
+		"skipLibCheck": true,
+		"strictNullChecks": true,
+		"noEmitOnError": true,
+		"stripInternal": true,
+		"strictPropertyInitialization": true,
+		"noImplicitUseStrict": true,
+		"types": [
+            "node"
+		],
+		"lib": [
+			"es2018"
+		],
+	},
+	"exclude": [
+		"node_modules"
+	],
+	"include": [
+		"src/**/*.ts"
+	]
+}

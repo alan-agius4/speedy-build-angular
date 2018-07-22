@@ -1,0 +1,63 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Stylelint Target",
+	"description": "Stylelint target options for Build Facade.",
+	"type": "object",
+	"properties": {
+		"stylelintConfig": {
+			"type": "string",
+			"description": "The name of the Stylelint configuration file."
+		},
+		"fix": {
+			"type": "boolean",
+			"description": "Fixes linting errors (may overwrite linted files).",
+			"default": false
+		},
+		"force": {
+			"type": "boolean",
+			"description": "Succeeds even if there was linting errors.",
+			"default": false
+		},
+		"format": {
+			"type": "string",
+			"description": "Output format (compact, json, string, verbose).",
+			"default": "verbose",
+			"anyOf": [
+				{
+					"enum": [
+						"compact",
+						"json",
+						"string",
+						"verbose"
+					]
+				},
+				{
+					"minLength": 1
+				}
+			]
+		},
+		"exclude": {
+			"type": "array",
+			"description": "Files to exclude from linting.",
+			"default": [],
+			"items": {
+				"type": "string"
+			}
+		},
+		"files": {
+			"type": "array",
+			"description": "Files to include in linting.",
+			"default": ["**/*.@(scss|sass|css|less|stylus)"],
+			"items": {
+				"type": "string"
+			}
+		},
+		"silent": {
+			"type": "boolean",
+			"description": "Show output text.",
+			"default": false
+		}
+	},
+	"additionalProperties": false,
+	"required": []
+}
