@@ -1,4 +1,6 @@
 
+[![CircleCI](https://circleci.com/gh/alan-agius4/-speedy-build-angular/tree/master.svg?style=svg)](https://circleci.com/gh/alan-agius4/-speedy-build-angular/tree/master)
+
 # Angular CLI Stylelint builder
 
 This is third party builder (not officially supported by Angular), for [Styelint](https://github.com/stylelint/stylelint) in Angular CLI.
