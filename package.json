@@ -1,7 +1,13 @@
 {
   "name": "@speedy/build-angular",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "This is third party builder for Stylelint in Angular CLI.",
+  "keywords": [
+    "angular-cli",
+    "stylelint",
+    "angular",
+    "lint"
+  ],
   "main": "src/index.js",
   "typings": "src/index.d.ts",
   "builders": "builders.json",
@@ -17,6 +23,13 @@
     "version": "npm run build && npm run changelog",
     "postversion": "git commit --all -m \"chore(all): update for release\" && git push && git push --tags",
     "release": "cd dist && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alan-agius4/speedy-build-angular.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alan-agius4/speedy-build-angular/issues"
   },
   "author": "Alan Agius <alan.agius4@gmail.com>",
   "license": "ISC",
