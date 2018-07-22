@@ -28,6 +28,8 @@ Open your `angular.json` and add the new builder example;
 }
 ```
 
+For a full list of options that can be provided to this builder check the [schema](https://github.com/alan-agius4/speedy-build-angular/blob/master/src/schema.json).
+
 More details about angular workspace can be found in the [Angular CLI docs](https://github.com/angular/angular-cli/wiki/angular-workspace).
 
 To run the new builder use the following command;
