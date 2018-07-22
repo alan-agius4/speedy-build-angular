@@ -19,7 +19,7 @@ Open your `angular.json` and add the new builder example;
 ```json
 "lint-styles": {
     "builder": "@speedy/build-angular:stylelint",
-     "options": {
+    "options": {
         "stylelintConfig": ".stylelintrc",
         "exclude": [
             "**/node_modules/**"
