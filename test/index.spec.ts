@@ -18,7 +18,7 @@ describe("Stylelint Target", () => {
 		await host.restore().toPromise();
 	});
 
-	it("works", async () => {
+	it("should be successful when there is no lint error", async () => {
 		await runTargetSpec(host, stylelintTargetSpec)
 			.pipe(
 				tap(buildEvent => expect(buildEvent.success).toBe(true))
@@ -26,7 +26,7 @@ describe("Stylelint Target", () => {
 			.toPromise();
 	});
 
-	it("not succeeds when there is an error", async () => {
+	it("should not be successful when there is a lint error", async () => {
 		host.writeMultipleFiles(filesWithErrors);
 		await runTargetSpec(host, stylelintTargetSpec)
 			.pipe(
@@ -35,7 +35,7 @@ describe("Stylelint Target", () => {
 			.toPromise();
 	});
 
-	it("supports exclude", async () => {
+	it("should support exclude files", async () => {
 		host.writeMultipleFiles(filesWithErrors);
 		const overrides: Partial<StylelintBuilderOptions> = { exclude: ["**/foo.scss"] };
 
@@ -46,7 +46,7 @@ describe("Stylelint Target", () => {
 			.toPromise();
 	});
 
-	it("supports fix", async () => {
+	it("should support fix of lint issues", async () => {
 		host.writeMultipleFiles(filesWithErrors);
 		const overrides: Partial<StylelintBuilderOptions> = { fix: true };
 
@@ -62,7 +62,7 @@ describe("Stylelint Target", () => {
 			.toPromise();
 	});
 
-	it("supports force", async () => {
+	it("should support force success", async () => {
 		host.writeMultipleFiles(filesWithErrors);
 		const logger = new TestLogger("lint-force");
 		const overrides: Partial<StylelintBuilderOptions> = { force: true };
