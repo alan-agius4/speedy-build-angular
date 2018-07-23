@@ -15,5 +15,7 @@ test_script:
 build: off
 deploy: off
 
+skip_branch_with_pr: true
+
 cache:
   - node_modules
