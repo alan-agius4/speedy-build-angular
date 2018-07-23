@@ -45,7 +45,7 @@ export default class StylelintBuilder implements Builder<StylelintBuilderOptions
 				config,
 				formatter,
 				configBasedir: systemRoot,
-				files: this.getFilesToLint(root, builderConfig.options),
+				files: this.getFilesToLint(systemRoot, builderConfig.options),
 				fix
 			})
 		)
