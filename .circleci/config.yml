@@ -34,10 +34,29 @@ jobs:
           key: speedy-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - node_modules
+      
+  lint:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - restore_cache:
+          key: speedy-{{ .Branch }}-{{ checksum "package.json" }}
+      - run:
+          name: Installing npm packages
+          command: npm install
+      - run: 
+          name: Test
+          command: npm run lint
+      - save_cache:
+          key: speedy-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - node_modules
 
 workflows:
   version: 2
   default_workflow:
     jobs:
+      - lint
       - build
       - test
