@@ -33,7 +33,7 @@
     "url": "https://github.com/alan-agius4/speedy-build-angular/issues"
   },
   "author": "Alan Agius <alan.agius4@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "peerDependencies": {
     "stylelint": ">=9.3.0"
   },
