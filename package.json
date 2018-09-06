@@ -38,7 +38,7 @@
     "stylelint": ">=9.3.0"
   },
   "dependencies": {
-    "@angular-devkit/architect": "^0.7.0-rc.3",
+    "@angular-devkit/architect": "^0.8.0",
     "@angular-devkit/core": "^0.7.0-rc.3",
     "glob": "^7.1.2",
     "rxjs": "^6.0.0"
