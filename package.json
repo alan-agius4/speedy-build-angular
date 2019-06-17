@@ -33,28 +33,27 @@
     "url": "https://github.com/alan-agius4/speedy-build-angular/issues"
   },
   "author": "Alan Agius <alan.agius4@gmail.com>",
-  "license": "MIT",
+  "license": "ISC",
   "peerDependencies": {
     "stylelint": ">=9.3.0"
   },
   "dependencies": {
-    "@angular-devkit/architect": "^0.8.0",
-    "@angular-devkit/core": "^7.0.0",
-    "glob": "^7.1.2",
-    "rxjs": "^6.0.0"
+    "@angular-devkit/architect": "^0.800.3",
+    "@angular-devkit/core": "^8.0.3",
+    "glob": "^7.1.2"
   },
   "devDependencies": {
-    "@types/glob": "^7.0.0",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/stylelint": "^9.0.0",
-    "conventional-changelog-cli": "^2.0.1",
+    "@types/glob": "^5.0.35",
+    "@types/jest": "^23.3.0",
+    "@types/node": "^10.5.2",
+    "@types/stylelint": "^9.10.0",
+    "conventional-changelog-cli": "^2.0.22",
     "cpx": "^1.5.0",
-    "jest": "^24.0.0",
+    "jest": "^23.4.1",
     "rimraf": "^2.6.2",
     "stylelint": "^9.3.0",
     "ts-jest": "^23.0.1",
-    "tslint": "^5.11.0",
-    "typescript": "~3.2.0"
+    "tslint": "^5.17.0",
+    "typescript": "~3.4.2"
   }
 }
