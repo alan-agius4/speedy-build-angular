@@ -1,3 +1,12 @@
+# [0.2.0](https://github.com/alan-agius4/speedy-build-angular/compare/v0.1.2...v0.2.0) (2019-06-17)
+
+
+### Bug Fixes
+
+* update to architect api to version 8 ([00ebaaf](https://github.com/alan-agius4/speedy-build-angular/commit/00ebaaf)), closes [#25](https://github.com/alan-agius4/speedy-build-angular/issues/25)
+
+
+
 <a name="0.1.2"></a>
 ## [0.1.2](https://github.com/alan-agius4/speedy-build-angular/compare/v0.1.1...v0.1.2) (2018-07-23)
 
