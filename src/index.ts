@@ -27,7 +27,6 @@ async function _run(
 		? JSON.parse(readFileSync(path.resolve(systemRoot, stylelintConfig), "utf-8"))
 		: undefined;
 
-	console.log(getFilesToLint(systemRoot, options));
 	const result = await stylelint.lint({
 		config,
 		formatter,
