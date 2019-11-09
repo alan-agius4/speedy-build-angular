@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/alan-agius4/speedy-build-angular/compare/v0.2.0...v0.3.0) (2019-11-09)
+
+
+### Bug Fixes
+
+* remove redundant logs ([8e85ff4](https://github.com/alan-agius4/speedy-build-angular/commit/8e85ff4)), closes [#33](https://github.com/alan-agius4/speedy-build-angular/issues/33)
+
+
+
 # [0.2.0](https://github.com/alan-agius4/speedy-build-angular/compare/v0.1.2...v0.2.0) (2019-06-17)
 
 
