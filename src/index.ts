@@ -12,6 +12,7 @@ export interface StylelintBuilderOptions extends json.JsonObject {
 	force: boolean;
 	format: stylelint.FormatterType;
 	silent: boolean;
+	ignorePath: string;
 	exclude: string[];
 	files: string[];
 }
@@ -21,7 +22,7 @@ async function _run(
 	context: BuilderContext
 ): Promise<BuilderOutput> {
 	const systemRoot = context.workspaceRoot;
-	const { stylelintConfig, format: formatter, fix, force, silent } = options;
+	const { stylelintConfig, format: formatter, fix, force, silent, ignorePath } = options;
 
 	const config = stylelintConfig
 		? JSON.parse(readFileSync(path.resolve(systemRoot, stylelintConfig), "utf-8"))
@@ -32,7 +33,8 @@ async function _run(
 		formatter,
 		configBasedir: systemRoot,
 		files: getFilesToLint(systemRoot, options),
-		fix
+		fix,
+		ignorePath
 	});
 
 	if (!silent) {
