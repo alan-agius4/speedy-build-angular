@@ -36,10 +36,6 @@
 				}
 			]
 		},
-		"ignorePath": {
-		  "type": "string",
-		  "description": "Path to an ignore file with .gitignore syntax"
-		},
 		"exclude": {
 			"type": "array",
 			"description": "Files to exclude from linting.",

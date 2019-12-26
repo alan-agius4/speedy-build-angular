@@ -10,7 +10,6 @@ import { StylelintBuilderOptions } from "../src/index";
 
 describe("Stylelint Target", () => {
 	const filesWithErrors = { "src/foo.scss": "a { color: #ffffff }" };
-	const gitIgnoreFile = { ".gitignore": "src/foo.scss" };
 	const stylelintTargetSpec = { project: "app", target: "lint" };
 	let testArchitectHost: TestingArchitectHost;
 	let architect: Architect;
@@ -58,15 +57,6 @@ describe("Stylelint Target", () => {
 	it("should support exclude files", async () => {
 		host.writeMultipleFiles(filesWithErrors);
 		const overrides: Partial<StylelintBuilderOptions> = { exclude: ["**/foo.scss"] };
-		const run = await architect.scheduleTarget(stylelintTargetSpec, overrides);
-		const output = await run.result;
-		expect(output.success).toBe(true);
-		await run.stop();
-	});
-
-	it("should support ignorePath", async () => {
-		host.writeMultipleFiles({ ...filesWithErrors, ...gitIgnoreFile });
-		const overrides: Partial<StylelintBuilderOptions> = { ignorePath: "./.gitignore" };
 		const run = await architect.scheduleTarget(stylelintTargetSpec, overrides);
 		const output = await run.result;
 		expect(output.success).toBe(true);
