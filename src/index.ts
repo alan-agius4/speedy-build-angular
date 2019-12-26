@@ -36,7 +36,6 @@ async function _run(
 	});
 
 	if (!silent) {
-		console.log(result.errored);
 		if (result.errored) {
 			context.logger.error("Lint errors found in the listed files.");
 		} else {

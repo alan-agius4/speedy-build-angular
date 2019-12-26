@@ -1,9 +1,7 @@
 import { Architect } from "@angular-devkit/architect";
 import { WorkspaceNodeModulesArchitectHost } from "@angular-devkit/architect/node";
 import { TestingArchitectHost, TestProjectHost } from "@angular-devkit/architect/testing";
-import { experimental, logging, normalize, schema, virtualFs } from "@angular-devkit/core";
-import { NodeJsSyncHost } from "@angular-devkit/core/node";
-import * as fs from "fs";
+import { getSystemPath, logging, normalize, schema, virtualFs, workspaces } from "@angular-devkit/core";
 import * as path from "path";
 
 import { StylelintBuilderOptions } from "../src/index";
@@ -17,24 +15,23 @@ describe("Stylelint Target", () => {
 	const host = new TestProjectHost(normalize(workspaceRoot));
 
 	beforeEach(async () => {
-		const vfHost = new NodeJsSyncHost();
-		const configPath = path.join(workspaceRoot, "angular.json");
-		const configContent = fs.readFileSync(configPath, "utf-8");
-		const workspaceJson = JSON.parse(configContent);
-
 		const registry = new schema.CoreSchemaRegistry();
 		registry.addPostTransform(schema.transforms.addUndefinedDefaults);
 
-		const workspace = new experimental.workspace.Workspace(normalize(workspaceRoot), vfHost);
-		await workspace.loadWorkspaceFromJson(workspaceJson).toPromise();
+		const { workspace } = await workspaces.readWorkspace(
+			workspaceRoot,
+			workspaces.createWorkspaceHost(host)
+		);
+
+		await host.initialize().toPromise();
 
 		testArchitectHost = new TestingArchitectHost(
-			workspaceRoot,
-			workspaceRoot,
+			getSystemPath(host.root()),
+			getSystemPath(host.root()),
 			new WorkspaceNodeModulesArchitectHost(workspace, workspaceRoot)
 		);
+
 		architect = new Architect(testArchitectHost, registry);
-		await host.initialize().toPromise();
 	});
 
 	afterEach(async () => host.restore().toPromise());
@@ -46,7 +43,7 @@ describe("Stylelint Target", () => {
 		await run.stop();
 	});
 
-	xit("should not be successful when there is a lint error", async () => {
+	it("should not be successful when there is a lint error", async () => {
 		host.writeMultipleFiles(filesWithErrors);
 		const run = await architect.scheduleTarget(stylelintTargetSpec);
 		const output = await run.result;
@@ -63,7 +60,7 @@ describe("Stylelint Target", () => {
 		await run.stop();
 	});
 
-	xit("should support fix of lint issues", async () => {
+	it("should support fix of lint issues", async () => {
 		host.writeMultipleFiles(filesWithErrors);
 		const overrides: Partial<StylelintBuilderOptions> = { fix: true };
 		const run = await architect.scheduleTarget(stylelintTargetSpec, overrides);
@@ -77,7 +74,7 @@ describe("Stylelint Target", () => {
 		await run.stop();
 	});
 
-	xit("should support force success", async () => {
+	it("should support force success", async () => {
 		host.writeMultipleFiles(filesWithErrors);
 		const logger = new logging.Logger("lint-force");
 		const allLogs: string[] = [];
