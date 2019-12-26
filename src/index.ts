@@ -32,7 +32,7 @@ async function _run(
 		formatter,
 		configBasedir: systemRoot,
 		files: getFilesToLint(systemRoot, options),
-		fix,
+		fix
 	});
 
 	if (!silent) {
